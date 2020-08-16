@@ -1,0 +1,23 @@
+.text {
+  &.test1 {
+    position: absolute;
+  }
+}
+
+.test2 {}
+
+.foo {
+  display: flex;
+
+  &.bar {
+      display: inline;
+  }
+
+  & .baz {
+    display: block;
+  }
+
+  .bag {
+    display: inline-flex;
+  }
+}

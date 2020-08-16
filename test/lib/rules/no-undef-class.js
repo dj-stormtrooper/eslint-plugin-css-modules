@@ -358,6 +358,26 @@ ruleTester.run('no-undef-class', rule, {
       `,
       options: [{ camelCase: 'dashes-only' }],
     }),
+
+    /*
+      check for custom preferred extension
+     */
+    test({
+      code: `
+        import s from './noUndefClass4.css';
+
+        export default Foo = () => (
+          <div>
+            <div className={s.foo}/>
+            <div className={s.bar}></div>
+            <div className={s.baz}></div>
+            <div className={s.bag}></div>
+            <div className={s.test2}></div>
+          </div>
+        );
+      `,
+      options: [{ syntax: 'scss' }],
+    }),
   ],
   /*
      invalid cases
